@@ -34,13 +34,7 @@ public class TP_3_C {
             Personas [2] [i] = sc.next();
         }
 
-        for (i=0;i<2;i++){
-
-            Nombre [i] = Personas [i] [0];
-
-        }
-
-        Arrays.sort(Nombre);
+       /// Ordeno la Matriz de acuerdo a los nombres, alfabeticamente
 
         for (i=0;i<1;i++){
 
@@ -49,8 +43,11 @@ public class TP_3_C {
 
                 if (Personas [0] [i].compareTo(Personas [0] [j] ) > 0){
 
+                    // El compareTo, lo encontre en Internet, no lo conocia desde antes.
+
                     for (p=0;p<3;p++){
 
+                        // Uso Metodo Burbuja
                         Aux  [p] = Personas [p] [i];
                         Personas [p] [i] = Personas [p] [j];
                         Personas [p] [j] = Aux  [p];
@@ -65,6 +62,7 @@ public class TP_3_C {
         }
 
 
+        // Muestro la Matriz
         for (i=0;i<3;i++){
 
             for (j=0;j<2;j++){
