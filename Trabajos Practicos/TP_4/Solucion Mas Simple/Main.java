@@ -1,6 +1,5 @@
 package Trabajos_Practicos.TP_4;
 
-import Clases.Clase_5.CuentaCorriente;
 
 import java.util.Scanner;
 
