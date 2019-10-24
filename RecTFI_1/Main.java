@@ -1,0 +1,107 @@
+package RecTFI_1;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int capacidad,i;
+
+        Scanner input = new Scanner(System.in);
+        try{
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 1: Crear vehiculo");
+
+            System.out.println("Ingrese la cantidad de pasajeros que desea cargar");
+            capacidad = input.nextInt();
+
+            System.out.println("Ingrese la maticula del colectivo");
+            String matricula = input.next();
+
+            Vehiculos v1 = new Vehiculos(capacidad,matricula);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 2: Carga  de  Pasajeros ");
+            v1.CargarPasajeros();
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 3 : Crear Chofher");
+
+            System.out.println("Ingrese Nombre");
+            String nombre = input.next();
+            System.out.println("Ingrese DNI");
+            int DNI =input.nextInt();
+
+            Chofer chofer1 = new Chofer(nombre, DNI);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 4: Asignar un chofer a un Vehiculo");
+            v1.setChofer(chofer1);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 5: Controlar que no supere la capacidad de pasajeros");
+
+        System.out.println("Cuantos pasajeros desea ingresar en el vehiculo");
+        int cant = input.nextInt();
+
+            if (cant > capacidad){
+                System.out.println("Supera la capacidad disponible");
+            }
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 6: Crear un  origen ");
+
+            System.out.println("Ingrese lugar de  origen");
+            String nom = input.next();
+            System.out.println("Ingrese la direccion de origen ");
+            String direc = input.next();
+            Origen origen1 = new Origen(nom,direc);
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            System.out.println("\t\t Paso 7: asignar origen a un vehiculo");
+
+            v1.setOrigen(origen1);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 8: crear destino");
+
+            System.out.println("Ingrese lugar de  destino");
+            String nomb = input.next();
+            System.out.println("Ingrese la direccion de destino ");
+            String direccion = input.next();
+            Destino destino1 = new Destino(nomb,direccion);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 9: asignar destino a vehiculo");
+
+            v1.setDestino(destino1);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 10: Mostrar Vehiculo");
+
+        System.out.println( v1.toString());
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 10: Mostrar Chofer");
+        System.out.println(chofer1.toString());
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 10: Mostrar Origen");
+        System.out.println( origen1.toString());
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+            System.out.println("\t\t Paso 10: Mostrar Destino");
+        System.out.println( destino1.toString());
+
+        }catch (Exception e){
+
+           System.out.println("ERROR EN EL INGRESO DE DATOS");
+        }
+
+
+
+    }
+}
